@@ -8,6 +8,16 @@ public class Cow extends Herbivore implements Run, Voice{
     }
 
     @Override
+    public void walkingStep() {
+        System.out.println("Корова прогуливается");
+    }
+
+    @Override
+    public void treadOnTheGround() {
+        System.out.println("Корова топчется на месте");
+    }
+
+    @Override
     public String voice() {
         return "Mooooo";
     }

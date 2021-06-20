@@ -3,6 +3,8 @@ import food.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Zoo {
     public static void main(String[] args) {
@@ -20,10 +22,14 @@ public class Zoo {
         PigMeat pigMeat = new PigMeat();
         Wheat wheat = new Wheat();
 
-        worker.feed(wheat,bear);
-        worker.feed(pigMeat,giraffe);
-        worker.feed(pigMeat,tiger);
-        worker.feed(chickenMeat,tiger);
+        List<Animal> animals = Arrays.asList(tiger, fish, bear, cow, duck, giraffe);
+        List<Food> food = Arrays.asList(chickenMeat, clever, cowMeat, lupin, pigMeat, wheat);
+        for (Animal animal : animals) {
+            for (Food food1 : food) {
+                worker.feed(food1, animal);
+            }
+        }
+
         worker.getVoice(cow);
         tiger.getSatiety();
 
