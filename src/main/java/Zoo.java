@@ -8,12 +8,12 @@ import java.util.List;
 
 public class Zoo {
     public static void main(String[] args) {
-        Tiger tiger = new Tiger();
-        Bear bear = new Bear();
-        Fish fish = new Fish();
-        Cow cow = new Cow();
-        Duck duck = new Duck();
-        Giraffe giraffe = new Giraffe();
+        Tiger tiger = new Tiger("Тигра");
+        Bear bear = new Bear("Миша");
+        Fish fish = new Fish("Карпик");
+        Cow cow = new Cow("Буренка");
+        Duck duck = new Duck("Дональд");
+        Giraffe giraffe = new Giraffe("Мелман");
         Worker worker = new Worker();
         ChickenMeat chickenMeat = new ChickenMeat();
         Clever clever = new Clever();
@@ -34,8 +34,22 @@ public class Zoo {
         tiger.getSatiety();
 
 //        worker.getVoice(fish);
-        Swim[] pool1 = {fish, duck, new Fish()};
+        Swim[] pool1 = {fish, duck, new Fish("Виталик")};
         Arrays.stream(pool1).forEach(swim -> swim.swim());
+
+        Aviary<Animal> aviary = new Aviary<>(AviarySize.MEDIUM);
+        aviary.addAnimal(duck);
+        aviary.addAnimal(tiger);
+        aviary.addAnimal(cow);
+        aviary.addAnimal(bear);
+        aviary.addAnimal(new Cow("Муренка"));
+        aviary.addAnimal(new Cow("Борька"));
+        aviary.getAnimal("Дональд");
+        aviary.removeAnimal("Дональд");
+
+
+
+
 
     }
 }

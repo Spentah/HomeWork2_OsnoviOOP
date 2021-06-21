@@ -6,9 +6,9 @@ import food.Meat;
 public abstract class Herbivore extends Animal{
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         if (food instanceof Meat) {
-            System.out.println("Травоядные не едят мясо!");
+            throw new WrongFoodException("Травоядные не едят мясо!");
         } else {
             System.out.println("Травоядная зверушка покормлена");
             satiety += food.getEnergy();
